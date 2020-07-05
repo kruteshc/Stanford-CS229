@@ -53,7 +53,7 @@ Why squared error ? Generalized linear models.. linear regression is just part o
 
 Let's see how we can implement an algorithm that can minimize the cost function (J of O (theta)
 
-### Gradient Descent
+### Gradient Descent: Batch for Linear Regression
 
 We are going to start with some value of O (theta), which starts with some intital O, and repeatedly performs update O (theta) to reduce J(O)/cost function.
 
@@ -81,5 +81,42 @@ Well so the partial derative calculation is, ( derative of function defines the 
  
  ![Goal](  https://user-images.githubusercontent.com/62080661/86200011-9d940c00-bb29-11ea-8537-e15b1c8d007a.png )
 
+The deravitive of the sum is the sum of the derivaties.
 
-# PAUSED AT 33:40
+
+For linear regression, it turns out that if j(O) is sum of squared sums then it turns out to be a quadratic function.
+j(o) does not have local optima ( the onyl local optima is also the global optima). 
+
+ ![Gradient Descent on Linear Regression](  https://user-images.githubusercontent.com/62080661/86540503-e5bd8080-bed3-11ea-8282-1da93c0f3e73.png )
+ 
+The other way to look at this is by looking at contours of the plots (image above). Looking at the big bowl and taking horizontal slices and plotting the edges of the horizontal slices. Essentially what it will be is a ellipsis ( as seen below )
+
+ ![Gradient Descent on Linear Regression](  https://user-images.githubusercontent.com/62080661/86540486-c6beee80-bed3-11ea-8b89-58af5eda1eff.png)
+
+Direction of steepest descent is always at 90* (orthogonal to the contour direction) As we go down hill, there is only 1 local mimium hence it will eventually converge. 
+
+If the alpha too large, you'll run past the minium.. if too small, it'll take forever. In pratice, we experiement. If the cost function increases then you know that learning rate might be too large. 
+
+With each iteration of gradient descent, it's trying to minimize j(O) (cost function)... minimize 1/2 of the sum of squared errors of the predictions.
+
+If you add multiple times in gradient, you go uphill not downhill. Thats why we subtract the value (learning rate/gradient descent) from theta.
+
+Our gradient descent here calculates the deratives on entire training set (m). So sometimes this version of gradient descent is also known as Batch Gradient Descent.
+
+Disadv. if you have a giant dataset, in order to make 1 update to your parameter (for one iteration), then we have to scan through the entire dataset for m (ex 100M ) then this constricts processing power
+
+
+An Alternative to batch gradient descent,
+
+## Stochastic Gradient Descent
+
+ ![Sotchastic Gradient Descent]( https://user-images.githubusercontent.com/62080661/86540478-adb63d80-bed3-11ea-859a-9eeb1217cdec.png )
+
+
+So instead of scan
+
+
+
+
+
+
