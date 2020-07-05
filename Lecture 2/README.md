@@ -108,12 +108,33 @@ Disadv. if you have a giant dataset, in order to make 1 update to your parameter
 
 An Alternative to batch gradient descent,
 
-## Stochastic Gradient Descent
+### Stochastic Gradient Descent
 
  ![Sotchastic Gradient Descent]( https://user-images.githubusercontent.com/62080661/86540478-adb63d80-bed3-11ea-859a-9eeb1217cdec.png )
 
 
-So instead of scan
+So instead of scanning through all million examples before updating theta, instead in inner loop of the algorithm , take the gradient descent step using just 1 single example (example i)
+
+
+What this algorithm is essentially doing, we intialize and then go with 1 st house and then adjust j(o) again and then 2nd etc. Takes a random task but on average is headed towards the local minimum. Stochastic gradient descent will never quite converge. Cuz u are always running around looking at differnet houses (ex). but allows you to make much faster progress ( so on large datasets, this would work better)
+
+Stochastic to Batch ? [ Mini-batch graident descet ] where you use 100 examples at a time instead of 1 at a time. In practice, when dataset is large we barely switch to batch cuz of just the slow nature
+
+When do you stop ?
+
+Plot J(O) over time and if it looks like it stopped going down then you can say okay stop. One nice thing about linear regression, it has to no local optimum so you run into these convergence debugging issues less often.
+
+## Normal Equation
+
+For special case of linear regression, it turns out that there is a way to solve for optimal value of the paremters O to just jump in one step to global minimum without need iof iterative algorithm like Gradient descent.
+
+Works only for linear regression !
+
+In this method, we will minimize J by explicitly taking its derivatives with respect to the Oj ’s, and setting them to zero. 
+
+
+
+
 
 
 
